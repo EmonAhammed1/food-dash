@@ -271,7 +271,8 @@ export default function RestaurantPage({ params }) {
   useEffect(() => {
     const fetchRestaurant = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/restaurants/${id}`);
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+        const res = await fetch(`${apiUrl}/api/restaurants/${id}`);
         const data = await res.json();
         
         if (data && data.name) {

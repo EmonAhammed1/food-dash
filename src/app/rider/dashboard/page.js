@@ -43,10 +43,12 @@ export default function RiderDashboard() {
     }
     setUser(parsedUser);
 
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
     // Fetch initial order list
     const fetchOrders = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/orders");
+        const res = await fetch(`${apiUrl}/api/orders`);
         const data = await res.json();
         if (Array.isArray(data)) {
           setOrders(data);
@@ -63,7 +65,7 @@ export default function RiderDashboard() {
     fetchOrders();
 
     // Setup WebSockets connection
-    const socketClient = io("http://localhost:5000");
+    const socketClient = io(apiUrl);
     setSocket(socketClient);
 
     socketClient.on("connect", () => {
@@ -150,7 +152,8 @@ export default function RiderDashboard() {
 
   const updateOrderStatus = async (orderId, newStatus) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/orders/${orderId}/status`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const res = await fetch(`${apiUrl}/api/orders/${orderId}/status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

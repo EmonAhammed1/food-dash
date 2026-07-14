@@ -52,10 +52,11 @@ export default function OrderStatusPage({ params }) {
   const [riderLocation, setRiderLocation] = useState({ lat: 80, lng: 20 }); // Restaurant position (X=20, Y=80)
 
   useEffect(() => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
     // 1. Fetch initial order state from DB
     const fetchOrder = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/orders/${id}`);
+        const res = await fetch(`${apiUrl}/api/orders/${id}`);
         const data = await res.json();
         
         if (data && data.status) {
@@ -83,7 +84,7 @@ export default function OrderStatusPage({ params }) {
     fetchOrder();
 
     // 2. Initialize WebSockets Client
-    const socketClient = io("http://localhost:5000");
+    const socketClient = io(apiUrl);
     setSocket(socketClient);
 
     socketClient.on("connect", () => {

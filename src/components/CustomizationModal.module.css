@@ -1,0 +1,225 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 15, 25, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 500px;
+  max-width: 90%;
+  max-height: 85vh;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  background: var(--surface);
+  transform: scale(1.1);
+}
+
+.imageSection {
+  height: 220px;
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.08) 0%, rgba(255, 165, 2, 0.08) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  position: relative;
+}
+
+.scrollArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.itemHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.itemName {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.itemDesc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.optionSection {
+  border-top: 1px solid var(--surface-border);
+  padding-top: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.requiredTag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.optionalTag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--background);
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optionLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.optionLabel:hover {
+  background: var(--background);
+  border-color: var(--text-secondary);
+}
+
+.activeOption {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.optionInputRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkbox, .radio {
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+}
+
+.optionName {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.optionPrice {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.activeOption .optionPrice {
+  color: var(--primary);
+}
+
+.footer {
+  padding: 24px;
+  border-top: 1px solid var(--surface-border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  background: var(--background);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 48px;
+}
+
+.qtyBtn {
+  width: 44px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.qtyBtn:hover {
+  background: var(--surface-border);
+}
+
+.qtyVal {
+  padding: 0 12px;
+  font-weight: 700;
+  min-width: 32px;
+  text-align: center;
+}
+
+.addBtn {
+  flex: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

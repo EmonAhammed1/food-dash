@@ -1,0 +1,360 @@
+.main {
+  min-height: 100vh;
+  padding-top: 72px;
+  background: var(--background);
+  padding-bottom: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.card {
+  padding: 32px;
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--surface-border);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.orderTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.orderId {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.timerValue {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: right;
+}
+
+.timerLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+/* Timeline Layout */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  margin: 32px 0;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 17px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--surface-border);
+  z-index: 1;
+}
+
+.timelineProgressLine {
+  position: absolute;
+  left: 17px;
+  top: 10px;
+  width: 2px;
+  background: var(--primary);
+  z-index: 1;
+  transition: height var(--transition-normal);
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.stepIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 2px solid var(--surface-border);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.stepActive {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.stepCompleted {
+  border-color: var(--accent-green);
+  background: var(--accent-green);
+  color: white;
+}
+
+.stepContent {
+  flex: 1;
+  padding-top: 6px;
+}
+
+.stepTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  transition: color var(--transition-normal);
+}
+
+.stepTitleActive {
+  color: var(--primary);
+}
+
+.stepDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Rider Profile Box */
+.riderSection {
+  border-top: 1px solid var(--surface-border);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+
+.riderHeader {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.riderBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.riderProfile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.riderAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.riderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.riderName {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.riderRating {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chatActions {
+  display: flex;
+  gap: 10px;
+}
+
+.chatInputArea {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+}
+
+.sendBtn {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+/* Simulated Map Panel */
+.mapCard {
+  padding: 24px;
+}
+
+.mapHeader {
+  margin-bottom: 16px;
+}
+
+.mapTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.mapArea {
+  height: 380px;
+  background: radial-gradient(circle, var(--background) 20%, var(--surface-border) 100%);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.svgMap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.markerIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  border: 2px solid var(--text-primary);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.markerIconRest {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.markerIconHome {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.markerLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--text-primary);
+  color: var(--surface);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* Quick Replies */
+.quickReplies {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.quickReplyBtn {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px dashed var(--surface-border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.quickReplyBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.chatMessages {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  background: var(--background);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--surface-border);
+}
+
+.msg {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  max-width: 80%;
+}
+
+.msgCustomer {
+  background: var(--primary);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.msgRider {
+  background: var(--surface);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+  border: 1px solid var(--surface-border);
+}
+
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

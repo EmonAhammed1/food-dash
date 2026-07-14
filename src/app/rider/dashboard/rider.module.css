@@ -1,0 +1,245 @@
+.wrapper {
+  padding: 40px 24px;
+  min-height: 100vh;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.riderInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+}
+
+.riderName {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 12px;
+}
+
+:global(.dark) .cardTitle {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.orderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+:global(.dark) .orderRow {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.orderRowActive {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.orderId {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.orderAddress {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.simulatorPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+:global(.dark) .simulatorPanel {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.simBtn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.simBtnActive {
+  background: #00b894;
+}
+
+.logPanel {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background: #1e1e1e;
+  color: #a9b7c6;
+  padding: 12px;
+  border-radius: 8px;
+  max-height: 120px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logEntry {
+  color: #6a8759;
+}
+
+.chatWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.chatBox {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+:global(.dark) .chatBox {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.messageRow {
+  display: flex;
+}
+
+.messageCustomer {
+  justify-content: flex-start;
+}
+
+.messageRider {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.bubbleCustomer {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-top-left-radius: 4px;
+}
+
+.bubbleRider {
+  background: var(--primary);
+  color: #fff;
+  border-top-right-radius: 4px;
+}
+
+.chatForm {
+  display: flex;
+  gap: 8px;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+:global(.dark) .chatInput {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.sendBtn {
+  background: var(--primary);
+  border: none;
+  border-radius: 10px;
+  padding: 0 16px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
